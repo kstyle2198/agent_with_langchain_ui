@@ -11,5 +11,6 @@ pnpm dev
 3. 백엔드 실행명령
 ```
 cd backend
+.venv\scripts\activate
 langgraph dev
 ```
