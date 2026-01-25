@@ -1,0 +1,8 @@
+1. 프론트엔드
+   - cd agent-chat-ui 
+   - pnpm dev
+
+
+2. 백엔드 
+   - cd backend
+   - langgraph dev
