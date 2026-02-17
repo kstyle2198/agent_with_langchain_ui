@@ -76,6 +76,68 @@ langgraph dev
 }
 ```
 
+
+# 4. 기본 Postgres RDB 사용시 docker compose 파일
+
+```yaml
+services:
+  # 1. LangGraph API 서버
+  langgraph-api:
+    build: .
+    image: my-langgraph-app:v7
+    ports:
+      - "8123:8123"
+    environment:
+      # [수정] 외부 DB 주소로 변경
+      # 만약 DB가 같은 PC(로컬)에서 동작 중이라면 'host.docker.internal'을 사용하세요.
+      - DATABASE_URI=postgres://postgres:1234@host.docker.internal:5432/postgres
+      - LANGGRAPH_POSTGRES_URI=postgres://postgres:1234@host.docker.internal:5432/postgres
+      - REDIS_URI=redis://redis:6379
+
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - TAVILY_API_KEY=${TAVILY_API_KEY}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY} 
+      - LOG_LEVEL=debug
+      - LANGGRAPH_DEBUG=1
+      - PYTHONPATH=/deps/app
+      - LANGGRAPH_GRPC_READY_TIMEOUT=120
+      - HOST=0.0.0.0
+      - PORT=8123
+
+    volumes:
+      - .:/deps/app 
+    
+    networks:
+      - langgraph-net
+    
+    extra_hosts:
+      - "host.docker.internal:host-gateway" # 컨테이너 내부에서 로컬 호스트에 접근하기 위함
+
+    depends_on:
+      # postgres 의존성 제거
+      redis:
+        condition: service_healthy
+
+  # 2. 작업 큐 관리용 Redis
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - langgraph-net
+
+networks:
+  langgraph-net:
+    driver: bridge
+
+# pgdata 볼륨 정의 삭제
+```
+
 ---
 
 ## 제선생 참고자료
