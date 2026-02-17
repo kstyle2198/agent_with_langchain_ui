@@ -2,6 +2,9 @@ services:
   # 1. LangGraph API 서버
   langgraph-api:
     # Dockerfile에서 빌드한 이미지와 태그를 일치시킵니다.
+    # 1. 빌드 설정 추가: 현재 폴더(.)의 Dockerfile을 사용함
+    build: .
+    # 2. 빌드 후 생성될 이미지 이름을 지정
     image: my-langgraph-app:v7
     ports:
       - "8123:8123"
@@ -22,7 +25,6 @@ services:
 
       # [경로 설정] ModuleNotFoundError를 방지하기 위해 중요합니다.
       - PYTHONPATH=/deps/app
-      # - LANGSERVE_GRAPHS='{"agent":"agent_code.agent:agent"}'
 
       # 대기 시간을 120초로 늘려줍니다.
       - LANGGRAPH_GRPC_READY_TIMEOUT=120
@@ -30,9 +32,6 @@ services:
       # 서버가 외부의 모든 요청을 받아들일 수 있도록 호스트 강제 지정
       - HOST=0.0.0.0
       - PORT=8123
-
-      # gRPC 서버도 외부 접근이 가능하도록 설정 (필요 시)
-      - LANGGRAPH_API_HOST=0.0.0.0
 
     # [볼륨 마운트] 
     # 개발 단계에서 로컬 코드를 실시간 반영하려면 /deps/app으로 연결합니다.

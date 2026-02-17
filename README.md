@@ -3,18 +3,36 @@
 
 
 1. 프론트엔드 실행명령
-```
+```bash
 cd agent-chat-ui 
 pnpm dev
 ```
 
-2. 백엔드 실행명령
+2. 백엔드 도커 실행 명령
+
+```bash
+
+# 1. 컨테이너, 볼륨, 네트워크까지 모두 삭제 (이전 작업 완전 삭제 필요시)
+docker-compose down -v --remove-orphans
+
+# 볼륨은 유지하면서 컨테이너 삭제
+docker-compose down
+
+# 2. 깨끗한 상태에서 다시 실행
+docker-compose up -d --build
+
+# 3. 로그 확인
+docker-compose logs -f langgraph-api
+
+# 5. API document 
+http://127.0.0.1:8123/docs
+
+
 ```
-cd backend
-.venv\scripts\activate
-# 개발용
-langgraph dev --host localhost --port 2024   
-# langgraph dev 디폴트 URL은 http://localhost:2024 임
+
+```python
+# 단순 개발용 퀵 명령은 
+langgraph dev
 ```
 
 
@@ -23,20 +41,16 @@ langgraph dev --host localhost --port 2024
 - 아래 예시에서 프론트 연결시 중요한 Graph ID는 "graphs" 안에 있는 "agent" 이다. 
   (소스코드의 구조가 변경되면 langgraph.json 파일도 그에 맞춰서 수정 필요)
 
-```
+```json
 {
-  "dependencies": ["."],
+  "dependencies": ["./agent_code", "."],
   "graphs": {
-    "agent": "./src/agent.py:agent"
+    "agent": "agent_code.agent:agent"
   },
   "env": ".env"
 }
 ```
 
-
-5. Production-level에서 고려할 사항..
-
-- langgraph dev를 사용은 적합하지 않다.
-- fastapi와 langserve를 사용해야 한다.
-- 근데 이러면.. 엔드포인트가 달라져서.. langchain-chat-ui와 자동으로 연결되지 않는다. (langgraph dev에서는 자동으로 연결)
-- 결국 프론트에서 엔드포인트 멥핑 로직을 수정해야 한다.
+## 제선생 참고자료
+![alt text](image.png)
+![alt text](image-1.png)

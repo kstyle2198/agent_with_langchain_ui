@@ -1,54 +1,27 @@
-# import os
-# from langchain.agents import create_agent
-# from langchain_groq import ChatGroq
-
-# def send_email(to: str, subject: str, body: str):
-#     """Send an email"""
-#     email = {
-#         "to": to,
-#         "subject": subject,
-#         "body": body
-#     }
-#     # ... email sending logic
-
-#     return f"Email sent to {to}"
-
-# MODEL_NAME = os.getenv("BIG_MODEL")
-# llm = ChatGroq(model=MODEL_NAME, temperature=0)
-
-# agent = create_agent(
-#     llm,
-#     tools=[send_email],
-#     system_prompt="You are an email assistant. Always use the send_email tool.",
-# )
-
 import os
-# from dotenv import load_dotenv
-# from langchain_tavily import TavilySearch
+from langchain_tavily import TavilySearch
 from .utils.setlogger import setup_logger
 logger = setup_logger(f"{__name__}")
 
-# load_dotenv()
-
-# def web_search_tool(query: str):
-#     """Search on web for given query using tavily search tool"""
-#     logger.info(f"Performing web search for question: {query}")
-#     try:
-#         web_search_tool = TavilySearch(
-#             max_results=3,
-#             include_answer=True,
-#             include_raw_content=False,
-#             include_images=False,
-#         )
-#         web_results = web_search_tool.invoke(query)
-#         logger.info(f"Web search completed. Found {len(web_results.get('results', []))} results.")
-#         return web_results
-#     except Exception as e:
-#         logger.exception("Error occurred during web search")
-#         raise
+def web_search_tool(query: str):
+    """Search on web for given query using tavily search tool"""
+    logger.info(f"Performing web search for question: {query}")
+    try:
+        web_search_tool = TavilySearch(
+            max_results=3,
+            include_answer=True,
+            include_raw_content=False,
+            include_images=False,
+        )
+        web_results = web_search_tool.invoke(query)
+        logger.info(f"Web search completed. Found {len(web_results.get('results', []))} results.")
+        return web_results
+    except Exception as e:
+        logger.exception("Error occurred during web search")
+        raise
 
 
-tools = []
+tools = [web_search_tool]
 
 from typing import TypedDict, Annotated
 from langgraph.graph.message import add_messages
