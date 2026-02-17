@@ -8,7 +8,7 @@ cd agent-chat-ui
 pnpm dev
 ```
 
-# 2. 백엔드 도커 실행 명령
+# 2. 백엔드 도커 실행 명령(Agent, Postgres, Redis)
 
 ```bash
 
@@ -77,7 +77,7 @@ langgraph dev
 ```
 
 
-# 4. 기본 Postgres RDB 사용시 docker compose 파일
+# 4. 기존 Postgres RDB 사용시 docker compose 파일
 
 ```yaml
 services:
