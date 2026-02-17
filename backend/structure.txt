@@ -1,0 +1,25 @@
+Folder PATH listing for volume Local Disk
+Volume serial number is 9AFD-D642
+D:.
+|   .env
+|   .gitignore
+|   .python-version
+|   docker-compose.yml
+|   Dockerfile
+|   langgraph.json
+|   pyproject.toml
+|   README.md
+|   requirements.txt
+|   structure.txt
+|   uv.lock
+|           
++---agent_code
+|   |   agent.py
+|   |   __init__.py
+|   |   
+|   +---utils
+|   |   |   setlogger.py
+|   |   |   __init__.py
+
+
+        

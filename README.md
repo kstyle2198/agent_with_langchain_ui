@@ -1,14 +1,14 @@
 # Agent with Langchain&Langgraph
 
+---
 
-
-1. 프론트엔드 실행명령
+# 1. 프론트엔드 실행명령
 ```bash
 cd agent-chat-ui 
 pnpm dev
 ```
 
-2. 백엔드 도커 실행 명령
+# 2. 백엔드 도커 실행 명령
 
 ```bash
 
@@ -35,8 +35,33 @@ http://127.0.0.1:8123/docs
 langgraph dev
 ```
 
+## 백엔드 폴더 구조
 
-3. langgraph.json 
+```bash
+|   .env
+|   .gitignore
+|   .python-version
+|   docker-compose.yml
+|   Dockerfile
+|   langgraph.json
+|   pyproject.toml
+|   README.md
+|   requirements.txt
+|   structure.txt
+|   uv.lock
+|           
++---agent_code
+|   |   agent.py
+|   |   __init__.py
+|   |   
+|   +---utils
+|   |   |   setlogger.py
+|   |   |   __init__.py
+
+```
+
+
+# 3. langgraph.json 
 - langgraph dev 명령시 langgraph.json 세팅에 따라 실행됨
 - 아래 예시에서 프론트 연결시 중요한 Graph ID는 "graphs" 안에 있는 "agent" 이다. 
   (소스코드의 구조가 변경되면 langgraph.json 파일도 그에 맞춰서 수정 필요)
@@ -50,6 +75,8 @@ langgraph dev
   "env": ".env"
 }
 ```
+
+---
 
 ## 제선생 참고자료
 ![alt text](image.png)
