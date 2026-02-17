@@ -23,32 +23,32 @@
 # )
 
 import os
-from dotenv import load_dotenv
-from langchain_tavily import TavilySearch
-from utils.setlogger import setup_logger
+# from dotenv import load_dotenv
+# from langchain_tavily import TavilySearch
+from .utils.setlogger import setup_logger
 logger = setup_logger(f"{__name__}")
 
-load_dotenv()
+# load_dotenv()
 
-def web_search_tool(query: str):
-    """Search on web for given query using tavily search tool"""
-    logger.info(f"Performing web search for question: {query}")
-    try:
-        web_search_tool = TavilySearch(
-            max_results=3,
-            include_answer=True,
-            include_raw_content=False,
-            include_images=False,
-        )
-        web_results = web_search_tool.invoke(query)
-        logger.info(f"Web search completed. Found {len(web_results.get('results', []))} results.")
-        return web_results
-    except Exception as e:
-        logger.exception("Error occurred during web search")
-        raise
+# def web_search_tool(query: str):
+#     """Search on web for given query using tavily search tool"""
+#     logger.info(f"Performing web search for question: {query}")
+#     try:
+#         web_search_tool = TavilySearch(
+#             max_results=3,
+#             include_answer=True,
+#             include_raw_content=False,
+#             include_images=False,
+#         )
+#         web_results = web_search_tool.invoke(query)
+#         logger.info(f"Web search completed. Found {len(web_results.get('results', []))} results.")
+#         return web_results
+#     except Exception as e:
+#         logger.exception("Error occurred during web search")
+#         raise
 
 
-tools = [web_search_tool]
+tools = []
 
 from typing import TypedDict, Annotated
 from langgraph.graph.message import add_messages
@@ -58,17 +58,13 @@ class GraphState(TypedDict):
 
 
 from langgraph.graph import StateGraph
-from dotenv import load_dotenv
 import os
 from langgraph.checkpoint.memory import MemorySaver
 
 from langchain_groq import ChatGroq
 from langgraph.prebuilt import ToolNode, tools_condition
 
-load_dotenv()
-BIG_MODEL = os.getenv("BIG_MODEL")
-llm = ChatGroq(model_name=BIG_MODEL, temperature=0,max_tokens=3000,) 
-# memory = MemorySaver()
+llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0,max_tokens=3000) 
 llm_with_tools = llm.bind_tools(tools=tools)
 
 

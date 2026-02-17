@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from langserve import add_routes
-from src.agent import agent
+from agent_code.agent import agent
 
 app = FastAPI()
 add_routes(app, agent, path="/chat")
