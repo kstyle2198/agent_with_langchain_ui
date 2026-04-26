@@ -54,3 +54,6 @@
 2026-04-26 12:06:42 - agent.tools.wikisearch - INFO - Wiki search completed. Found 5 results.
 2026-04-26 12:08:06 - agent.tools.wikisearch - INFO - Performing wiki search for query: 앨런 튜링
 2026-04-26 12:08:12 - agent.tools.wikisearch - INFO - Wiki search completed. Found 4 results.
+2026-04-26 12:15:32 - agent.tools.arxiv - INFO - Performing arxiv search for question: language model knowledge distillation techniques
+2026-04-26 12:15:34 - agent.tools.arxiv - INFO - Arxiv search completed. Found 3 results.
+2026-04-26 12:15:55 - agent.tools.web - INFO - Performing web search for question: 로드및 주소및 총 신행및 정보 소녀 신행및
