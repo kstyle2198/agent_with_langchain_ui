@@ -1,7 +1,9 @@
 import os
 from langchain_tavily import TavilySearch
-from .utils.setlogger import setup_logger
+from ..utils.setlogger import setup_logger
 logger = setup_logger(f"{__name__}")
+
+from ..LLM.llms import GPT_OSS_120B
 
 def web_search_tool(query: str):
     """Search on web for given query using tavily search tool"""
@@ -33,12 +35,9 @@ class GraphState(TypedDict):
 from langgraph.graph import StateGraph
 import os
 from langgraph.checkpoint.memory import MemorySaver
-
-from langchain_groq import ChatGroq
 from langgraph.prebuilt import ToolNode, tools_condition
 
-llm = ChatGroq(model="openai/gpt-oss-120b", temperature=0,max_tokens=3000) 
-llm_with_tools = llm.bind_tools(tools=tools)
+llm_with_tools = GPT_OSS_120B.bind_tools(tools=tools)
 
 
 # 프롬프트 정의
@@ -73,4 +72,4 @@ def get_graph():
     return graph_builder.compile()
 
 # Create Graph Object
-agent = get_graph()
+websearch_agent = get_graph()

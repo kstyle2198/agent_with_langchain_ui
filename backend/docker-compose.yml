@@ -1,7 +1,6 @@
 services:
   # 1. LangGraph API 서버
   langgraph-api:
-    # Dockerfile에서 빌드한 이미지와 태그를 일치시킵니다.
     # 1. 빌드 설정 추가: 현재 폴더(.)의 Dockerfile을 사용함
     build: .
     # 2. 빌드 후 생성될 이미지 이름을 지정
@@ -37,15 +36,17 @@ services:
     # 개발 단계에서 로컬 코드를 실시간 반영하려면 /deps/app으로 연결합니다.
     volumes:
       - .:/deps/app 
-    
-    networks:
-      - langgraph-net
-    
+  
     depends_on:
       postgres:
         condition: service_healthy
       redis:
         condition: service_healthy
+    
+    networks:
+      - langgraph-net
+
+    restart: unless-stopped
 
   # 2. 체크포인트 저장용 DB
   postgres:
@@ -55,6 +56,8 @@ services:
     environment:
       - POSTGRES_PASSWORD=1234
       - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
@@ -62,21 +65,66 @@ services:
       retries: 5
     networks:
       - langgraph-net
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-
+    
   # 3. 작업 큐 관리용 Redis
   redis:
     image: redis:7
     ports:
-      - "6379:6379"  # 이 줄을 추가하세요!
+      - "6379:6379"  
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
       timeout: 5s
       retries: 5
+
     networks:
       - langgraph-net
+
+  # 4. Elasticsearch
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:9.2.0
+  #   ports:
+  #     - "9200:9200"
+  #   volumes:
+  #     - es_data:/usr/share/elasticsearch/data
+  #   environment:
+  #     discovery.type: "single-node"
+  #     xpack.security.enabled: "false"
+  #     xpack.security.http.ssl.enabled: "false"
+  #     xpack.security.transport.ssl.enabled: "false"
+  #   networks:
+  #     - langgraph-net
+  #   restart: unless-stopped
+
+  # # 5. Kibana
+  # kibana:
+  #   image: docker.elastic.co/kibana/kibana:9.0.0
+  #   environment:
+  #     - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+  #     - xpack.security.enabled=false
+  #   ports:
+  #     - "5601:5601"
+  #   depends_on:
+  #     - elasticsearch
+  #   networks:
+  #     - langgraph-net
+
+  # ollama:
+  #   build: 
+  #     context: ./ollama
+  #     dockerfile: Dockerfile
+  #   container_name: svc_ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - tutorial-vol:/ollama
+  #   entrypoint: ["/usr/bin/bash", "/pull-ollama.sh"]
+  #   networks:
+  #     - langgraph-net
+  #   restart: unless-stopped
 
 networks:
   langgraph-net:
@@ -84,3 +132,6 @@ networks:
 
 volumes:
   pgdata:
+  redis_data:
+  # es_data:
+  # tutorial-vol:

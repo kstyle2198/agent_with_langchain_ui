@@ -12,7 +12,7 @@ RUN PYTHONDONTWRITEBYTECODE=1 uv pip install --system --no-cache-dir -r requirem
 COPY . .
 
 # 5. 환경 변수 설정 (langgraph.json의 내용을 서버에 알려줌)
-ENV LANGSERVE_GRAPHS='{"agent": "agent_code.agent:agent"}'
+ENV LANGSERVE_GRAPHS='{"agent": "agent.main:agent"}'
 
 # 6. (선택사항) PYTHONPATH 설정 - 임포트 에러 방지
 ENV PYTHONPATH=/deps/app
