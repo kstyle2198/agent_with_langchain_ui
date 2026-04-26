@@ -1,2 +1,56 @@
 2026-04-26 04:21:17 - agents.main_agent - INFO - Performing web search for question: 미국 이란 국제 정세 최신 상황 2024
 2026-04-26 04:21:19 - agents.main_agent - INFO - Web search completed. Found 3 results.
+2026-04-26 04:42:09 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2025년 한국시리즈 우승팀
+2026-04-26 04:42:11 - agent.sub_agents.websearch_agent - INFO - Web search completed. Found 3 results.
+2026-04-26 04:52:55 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 어제 소닉붐 LG 농구 경기 결과
+2026-04-26 04:52:57 - agent.sub_agents.websearch_agent - INFO - Web search completed. Found 3 results.
+2026-04-26 09:09:23 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 국제 현황 2026 Iran international status April 2026
+2026-04-26 09:09:26 - agent.sub_agents.websearch_agent - INFO - Web search completed. Found 3 results.
+2026-04-26 09:10:16 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:10:17 - agent.sub_agents.websearch_agent - INFO - Web search completed. Found 3 results.
+2026-04-26 09:10:34 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 호르무즈 해협 상황
+2026-04-26 09:10:36 - agent.sub_agents.websearch_agent - INFO - Web search completed. Found 3 results.
+2026-04-26 09:12:08 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 NATO 호르무즈 해협 입장
+2026-04-26 09:12:10 - agent.sub_agents.websearch_agent - INFO - Web search completed. Found 3 results.
+2026-04-26 09:17:25 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 일본 미국 관세 협상 결과
+2026-04-26 09:17:27 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 한국 미국 관세 협상 결과
+2026-04-26 09:19:23 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2025년 한국시리즈 우승팀
+2026-04-26 09:20:37 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:26:29 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제정세
+2026-04-26 09:30:55 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:31:20 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 호르무즈 해협 상황 미국 이란 긴장
+2026-04-26 09:32:25 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:38:10 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:38:52 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세 NATO 입장
+2026-04-26 09:42:08 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 한국 지방선거 동향
+2026-04-26 09:42:52 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: April 2026 US Iran relations international situation
+2026-04-26 09:43:59 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 한국과 일본 최근 국제 관계 현황
+2026-04-26 09:51:49 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:52:45 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:59:04 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 미국 이란 국제 정세
+2026-04-26 09:59:54 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 호르무즈 해협 상황 미국 이란 제재
+2026-04-26 10:00:47 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 4월 NATO 호르무즈 해협 이란 미국 입장
+2026-04-26 10:05:02 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 최근 미국 그린란드 입장
+2026-04-26 10:05:05 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2024 미국 그린란드 입장 최근
+2026-04-26 10:05:08 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2023 미국 그린란드 정책
+2026-04-26 10:05:39 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2024년 미국 그린란드 정책
+2026-04-26 11:21:43 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 최근 한국 일본 동해 표기 분쟁 현황
+2026-04-26 11:22:59 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: Yoon Suk-yeol Japan visit date 2023
+2026-04-26 11:23:27 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 윤석열 일본 방문 2024 2025 2026
+2026-04-26 11:23:48 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 윤석열 일본 방문 2025 2026 대통령
+2026-04-26 11:24:16 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 한·일 정상회담 2025 윤석열 일본 방문 날짜
+2026-04-26 11:27:01 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 이재명 일본 방문 2025 뉴스
+2026-04-26 11:33:43 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 한국 지방선거 일정
+2026-04-26 11:35:59 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 민주당 경기도지사 후보
+2026-04-26 11:38:13 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 민주당 대구시장 후보
+2026-04-26 11:40:29 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 민주당 서울시장 후보
+2026-04-26 11:40:53 - agent.sub_agents.websearch_agent - INFO - Performing web search for question: 2026년 서울시장 당선 예상
+2026-04-26 11:50:07 - agent.tools.websearch - INFO - Performing web search for question: US Iran international relations April 2026
+2026-04-26 12:00:59 - agent.tools.wikisearch - INFO - Performing wiki search for query: 한글 창제일
+2026-04-26 12:01:04 - agent.tools.wikisearch - INFO - Wiki search completed. Found 3 results.
+2026-04-26 12:04:27 - agent.tools.websearch - INFO - Performing web search for question: 최근 한국 일본 국제 정세 2024
+2026-04-26 12:05:49 - agent.tools.websearch - INFO - Performing web search for question: 중국 일본 국제 정세 2024
+2026-04-26 12:06:36 - agent.tools.wikisearch - INFO - Performing wiki search for query: 피타고라스
+2026-04-26 12:06:42 - agent.tools.wikisearch - INFO - Wiki search completed. Found 5 results.
+2026-04-26 12:08:06 - agent.tools.wikisearch - INFO - Performing wiki search for query: 앨런 튜링
+2026-04-26 12:08:12 - agent.tools.wikisearch - INFO - Wiki search completed. Found 4 results.

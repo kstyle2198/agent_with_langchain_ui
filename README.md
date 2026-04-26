@@ -13,16 +13,16 @@ pnpm dev
 ```bash
 
 # 1. 컨테이너, 볼륨, 네트워크까지 모두 삭제 (이전 작업 완전 삭제 필요시)
-docker-compose down -v --remove-orphans
+docker compose down -v --remove-orphans
 
 # 볼륨은 유지하면서 컨테이너 삭제
-docker-compose down
+docker compose down
 
 # 2. 깨끗한 상태에서 다시 실행
-docker-compose up -d --build
+docker compose up -d --build
 
 # 3. 로그 확인
-docker-compose logs -f langgraph-api
+docker compose logs -f langgraph-api
 
 # 5. API document 
 http://127.0.0.1:8123/docs

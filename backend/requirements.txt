@@ -4,6 +4,7 @@ aiosignal==1.4.0
 annotated-doc==0.0.4
 annotated-types==0.7.0
 anyio==4.12.1
+arxiv==2.3.1
 attrs==25.4.0
 blockbuster==1.5.26
 certifi==2026.1.4
@@ -42,6 +43,7 @@ langchain==1.2.7
 langchain-core==1.2.7
 langchain-groq==1.1.1
 langchain-tavily==0.2.17
+langchain-community==0.4.1
 langgraph==1.0.7
 langgraph-api==0.8.1
 langgraph-checkpoint==4.0.0
@@ -105,6 +107,7 @@ uuid-utils==0.14.0
 uvicorn==0.40.0
 watchfiles==1.1.1
 websockets==16.0
+wikipedia==1.4.0
 xxhash==3.6.0
 yarl==1.22.0
 zipp==3.23.0
