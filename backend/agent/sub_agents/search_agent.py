@@ -24,7 +24,7 @@ from langchain_core.messages import BaseMessage
 # -------------------
 # 1. Tool 정의
 # -------------------
-tools = [web_search_tool]#, wiki_search_tool, arxiv_search_tool]
+tools = [web_search_tool, wiki_search_tool, arxiv_search_tool]
 
 
 # -------------------
@@ -129,10 +129,10 @@ def get_graph():
     builder.add_node("agent", agent_node)
     builder.set_entry_point("agent")
 
-    return builder.compile()
+    return builder.compile(name="search_agent")
 
 
 # -------------------
 # 6. export
 # -------------------
-websearch_agent = get_graph()
+search_agent = get_graph()

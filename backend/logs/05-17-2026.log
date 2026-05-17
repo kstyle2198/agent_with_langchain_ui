@@ -1,2 +1,12 @@
 2026-05-17 01:04:26 - agent.tools.web - INFO - Performing web search for question: 최근 미중 정상회담 주요 내용
 2026-05-17 01:05:13 - agent.tools.web - INFO - Performing web search for question: language model distillation paper
+2026-05-17 01:28:12 - agent.tools.web - INFO - Performing web search for question: YOLO v8 자동 이미지 라벨링 방법
+2026-05-17 12:53:52 - agent.tools.web - INFO - Performing web search for question: knowledge distillation language model recent papers 2023 2024
+2026-05-17 12:54:01 - agent.tools.web - INFO - Performing web search for question: A Survey on Knowledge Distillation of Large Language Models 2024
+2026-05-17 12:54:14 - agent.tools.web - INFO - Performing web search for question: "A Survey on Knowledge Distillation of Large Language Models" authors
+2026-05-17 12:54:58 - agent.tools.arxiv - INFO - Performing arxiv search for question: knowledge distillation language models
+2026-05-17 12:55:02 - agent.tools.arxiv - INFO - Arxiv search completed. Found 3 results.
+2026-05-17 12:55:03 - agent.tools.web - INFO - Performing web search for question: knowledge distillation language model DistilBERT paper
+2026-05-17 12:55:12 - agent.tools.web - INFO - Performing web search for question: TinyBERT knowledge distillation paper
+2026-05-17 12:56:42 - agent.tools.arxiv - INFO - Performing arxiv search for question: language model knowledge distillation
+2026-05-17 12:56:44 - agent.tools.arxiv - INFO - Arxiv search completed. Found 3 results.

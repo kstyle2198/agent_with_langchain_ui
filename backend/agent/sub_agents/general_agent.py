@@ -68,7 +68,7 @@ def get_graph():
     builder.set_entry_point("agent")
     builder.set_finish_point("agent")
 
-    return builder.compile()
+    return builder.compile(name="general_agent")
 
 # Create Graph Object
 general_agent = get_graph()
