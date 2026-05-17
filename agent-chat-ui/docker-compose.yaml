@@ -1,0 +1,18 @@
+services:
+
+  agent-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: agent-chat-ui
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      NEXT_PUBLIC_ASSISTANT_ID: agent
+      NEXT_PUBLIC_API_URL: http://host.docker.internal:8123
+      NEXT_PUBLIC_AUTH_SCHEME: ""
+
+    restart: unless-stopped

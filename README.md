@@ -5,7 +5,7 @@
 # 1. 프론트엔드 실행명령
 ```bash
 cd agent-chat-ui 
-pnpm dev
+pnpm dev or docker compose up -d --build
 ```
 
 # 2. 백엔드 도커 실행 명령(Agent, Postgres, Redis)
