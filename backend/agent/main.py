@@ -6,12 +6,10 @@ from .sub_agents.general_agent import general_agent
 from .sub_agents.search_agent import search_agent
 from typing import TypedDict, List, Dict, Any, cast
 
-# agent = search_agent
-
 from langgraph_supervisor import create_supervisor
 from langchain.chat_models import init_chat_model
 
-supervisor = create_supervisor(
+agent = create_supervisor(
     model=GPT_OSS_120B,
     agents=[general_agent, search_agent],
     prompt=(

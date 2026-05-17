@@ -10,7 +10,7 @@ dependencies = [
     "langgraph==1.0.7",
     "langgraph-api>=0.8.0",
     "langgraph-cli[inmem]>=0.4.12",
-    "langgraph-runtime-inmem>=0.28.0",
+    "langgraph-runtime-inmem==0.28.1",
     "langgraph-supervisor>=0.0.31",
     "langserve>=0.3.3",
     "pypdf2>=3.0.1",

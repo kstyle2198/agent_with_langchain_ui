@@ -59,7 +59,7 @@ requires-dist = [
     { name = "langgraph", specifier = "==1.0.7" },
     { name = "langgraph-api", specifier = ">=0.8.0" },
     { name = "langgraph-cli", extras = ["inmem"], specifier = ">=0.4.12" },
-    { name = "langgraph-runtime-inmem", specifier = ">=0.28.0" },
+    { name = "langgraph-runtime-inmem", specifier = "==0.28.1" },
     { name = "langgraph-supervisor", specifier = ">=0.0.31" },
     { name = "langserve", specifier = ">=0.3.3" },
     { name = "pypdf2", specifier = ">=3.0.1" },
@@ -855,7 +855,7 @@ wheels = [
 
 [[package]]
 name = "langgraph-runtime-inmem"
-version = "0.28.0"
+version = "0.28.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "blockbuster" },
@@ -866,9 +866,9 @@ dependencies = [
     { name = "starlette" },
     { name = "structlog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f4/49/daf02ad6b9accd858a0e165d8beb94e5378fad12c17b29f8228d7a596be0/langgraph_runtime_inmem-0.28.0.tar.gz", hash = "sha256:e02536508b5c154f18a24240663af7c2389f43cb4fbbac995a2717b4cfe40d2f", size = 115393, upload-time = "2026-04-23T19:49:38.872Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d8/c5/862cb0040b8df1b6a4a98c59bfa535465f3a255e2f6d0c4326267a9678f0/langgraph_runtime_inmem-0.28.1.tar.gz", hash = "sha256:9457cb25554df69b04aee4df9da1172cd1fa7bc9cb590a9e807f2f9e45ec8ebd", size = 122237, upload-time = "2026-05-07T18:55:52.484Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d9/b1/b600e38260da97f2d71a041b2730f97f51bb2ce62a98230a7fac5fc3ca02/langgraph_runtime_inmem-0.28.0-py3-none-any.whl", hash = "sha256:26adc3bf115eba0b52532d18a13a297631454bc9f2a0e1f9b77060583ba81fdf", size = 47625, upload-time = "2026-04-23T19:49:37.869Z" },
+    { url = "https://files.pythonhosted.org/packages/87/df/2ba74530fdbf9664977ce0be96e32f3367175869e061a5b3d0cc25fbf073/langgraph_runtime_inmem-0.28.1-py3-none-any.whl", hash = "sha256:408af1ac462fd7e910881566e1a6d2b3837c712376f66ee04d2de11136dc84d1", size = 50393, upload-time = "2026-05-07T18:55:51.549Z" },
 ]
 
 [[package]]
